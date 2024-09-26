@@ -3,8 +3,18 @@ updates:
 - package-ecosystem: npm
   directory: /
   schedule:
-    interval: monthly
+    interval: daily
   ignore:
+      - dependency-name: "chai"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "eslint"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "flags"
+        update-types: ["version-update:semver-minor"]
       - dependency-name: "node-fetch"
         update-types: ["version-update:semver-major"]
 
+- package-ecosystem: github-actions
+  directory: /
+  schedule:
+    interval: daily
